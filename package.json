@@ -1,0 +1,23 @@
+{
+  "name": "keycommander",
+  "version": "0.1.0",
+  "description": "Keyboard-driven command palette for Obsidian with vim-like Insert/Normal modes, matching command names in both the UI language and English.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc --noEmit --skipLibCheck && node esbuild.config.mjs production",
+    "test": "vitest run",
+    "version": "node scripts/version-bump.mjs && git add manifest.json versions.json"
+  },
+  "keywords": ["obsidian", "plugin", "command", "palette", "vim"],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "builtin-modules": "^4.0.0",
+    "esbuild": "^0.25.0",
+    "obsidian": "latest",
+    "tslib": "^2.6.0",
+    "typescript": "^5.6.0",
+    "vitest": "^3.0.0"
+  }
+}

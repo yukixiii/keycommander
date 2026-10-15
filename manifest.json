@@ -1,0 +1,9 @@
+{
+	"id": "keycommander",
+	"name": "Keycommander",
+	"version": "0.1.0",
+	"minAppVersion": "1.6.6",
+	"description": "Keyboard-driven command palette with vim-like Insert/Normal modes. Finds commands by their localized or English names.",
+	"author": "yuki",
+	"isDesktopOnly": false
+}

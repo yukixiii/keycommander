@@ -1,0 +1,217 @@
+/* ---------- Modal layout ---------- */
+
+.modal.keycommander-modal {
+	width: min(760px, 92vw);
+	height: min(560px, 76vh);
+	max-width: none;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.keycommander-modal .modal-close-button,
+.keycommander-modal .modal-header-button,
+.keycommander-modal .modal-header {
+	display: none;
+}
+
+.keycommander-root {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	min-height: 0;
+}
+
+/* ---------- Prompt line ---------- */
+
+.keycommander-prompt {
+	flex: none;
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-2);
+	padding: var(--size-4-2) var(--size-4-3);
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.keycommander-mode {
+	flex: none;
+	min-width: 1.6em;
+	padding: 1px 6px;
+	border-radius: var(--radius-s);
+	font-family: var(--font-monospace);
+	font-size: var(--font-ui-smaller);
+	font-weight: var(--font-bold);
+	text-align: center;
+	color: var(--text-on-accent);
+	background-color: var(--interactive-accent);
+}
+
+.keycommander-mode.keycommander-mode-normal {
+	background-color: var(--color-green);
+}
+
+.keycommander-prompt input.keycommander-input {
+	flex: 1 1 auto;
+	min-width: 0;
+	border: none;
+	background: transparent;
+	box-shadow: none;
+	font-size: var(--font-ui-medium);
+	padding: 0;
+}
+
+.keycommander-prompt input.keycommander-input:focus {
+	box-shadow: none;
+}
+
+.keycommander-mode-normal .keycommander-input {
+	caret-color: transparent;
+}
+
+/* ---------- List ---------- */
+
+.keycommander-list {
+	flex: 1 1 0;
+	min-height: 0;
+	overflow-y: auto;
+	padding: var(--size-4-1) 0;
+}
+
+.keycommander-row {
+	display: flex;
+	align-items: center;
+	gap: var(--size-4-3);
+	padding: 3px var(--size-4-3);
+	cursor: pointer;
+	font-size: var(--font-ui-small);
+}
+
+.keycommander-row.is-selected {
+	background-color: var(--background-modifier-hover);
+	box-shadow: inset 2px 0 0 var(--interactive-accent);
+}
+
+.keycommander-text {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.keycommander-name,
+.keycommander-english {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.keycommander-name {
+	color: var(--text-normal);
+}
+
+.keycommander-english {
+	color: var(--text-faint);
+	font-size: var(--font-ui-smaller);
+}
+
+.keycommander-hotkey {
+	flex: none;
+	padding: 0 var(--size-4-1);
+	border-radius: var(--radius-s);
+	background-color: var(--background-modifier-border);
+	color: var(--text-muted);
+	font-family: var(--font-monospace);
+	font-size: var(--font-ui-smaller);
+	white-space: nowrap;
+}
+
+.keycommander-match {
+	color: var(--text-accent);
+	font-weight: var(--font-bold);
+}
+
+.keycommander-empty {
+	padding: var(--size-4-4);
+	color: var(--text-faint);
+	text-align: center;
+}
+
+/* ---------- Status line ---------- */
+
+.keycommander-status {
+	flex: none;
+	display: flex;
+	gap: var(--size-4-4);
+	padding: var(--size-4-1) var(--size-4-3);
+	border-top: 1px solid var(--background-modifier-border);
+	font-family: var(--font-monospace);
+	font-size: var(--font-ui-smaller);
+	color: var(--text-muted);
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.keycommander-hints {
+	margin-left: auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: var(--text-faint);
+}
+
+/* ---------- Settings ---------- */
+
+.keycommander-keymap-help code {
+	font-size: 0.9em;
+}
+
+.keycommander-keymap-header {
+	display: grid;
+	grid-template-columns: 1fr 13em 13em;
+	gap: var(--size-4-2);
+	padding: var(--size-4-1) 0;
+	margin-right: 5.2em;
+	font-size: var(--font-ui-smaller);
+	color: var(--text-muted);
+}
+
+.keycommander-keymap-header span:not(:first-child) {
+	text-align: center;
+}
+
+.keycommander-keymap-row .setting-item-control {
+	flex-wrap: nowrap;
+}
+
+.keycommander-keymap-input {
+	width: 11em;
+	font-family: var(--font-monospace);
+	font-size: var(--font-ui-smaller);
+}
+
+.keycommander-keymap-input.keycommander-invalid {
+	border-color: var(--text-error);
+	box-shadow: 0 0 0 1px var(--text-error);
+}
+
+.keycommander-keymap-input.keycommander-recording,
+.keycommander-recording {
+	box-shadow: 0 0 0 2px var(--interactive-accent);
+	color: var(--text-accent);
+}
+
+.keycommander-conflicts:not(:empty) {
+	margin: var(--size-4-2) 0;
+	padding: var(--size-4-2) var(--size-4-3);
+	border-radius: var(--radius-m);
+	border: 1px solid var(--text-warning);
+	color: var(--text-warning);
+	font-size: var(--font-ui-small);
+}
+
+.keycommander-conflicts-title {
+	font-weight: var(--font-semibold);
+}
+
+.keycommander-conflicts ul {
+	margin: var(--size-4-1) 0 0;
+	padding-left: 1.4em;
+}
